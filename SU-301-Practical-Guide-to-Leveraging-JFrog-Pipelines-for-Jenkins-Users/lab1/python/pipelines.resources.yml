@@ -2,8 +2,8 @@ resources:
   - name: lab1_src_code_webapp_python
     type: GitRepo
     configuration:
-      gitProvider: my_github
-      path: cyan21/SwampUp2021
+      gitProvider: myGithub
+      path: MikeKleinSYNA/SwampUp2021
       branches:
         include: {{ gitBranch }}
       files:
@@ -15,13 +15,13 @@ resources:
   - name: lab1_bi_webapp_python
     type: BuildInfo
     configuration:
-      sourceArtifactory: artifactory_eu
+      sourceArtifactory: myArtifactory
       buildName: {{ gitBranch }}_webapp_python
       buildNumber: ${run_number}
 
   - name: lab1_bi_webapp_python_promoted
     type: BuildInfo
     configuration:
-      sourceArtifactory: artifactory_brexit
+      sourceArtifactory: myArtifactory
       buildName: {{ gitBranch }}_webapp_python
       buildNumber: ${run_number}
